@@ -6,15 +6,16 @@ namespace Dz1
     {
         static void Main(string[] args)
         {
+            double pi = 3.14;
             Console.Write("Enter number in radians : ");
-            float beforeNumber = float.Parse(Console.ReadLine());
-            while ((beforeNumber <= 0) || (beforeNumber >= 2))
+            double beforeNumber = double.Parse(Console.ReadLine());
+            while ((beforeNumber <= 0) || (beforeNumber >= 2*pi))
             {
-                Console.WriteLine("Please enter number in the range 0 <a <2 : ");
-                beforeNumber = float.Parse(Console.ReadLine());
+                Console.WriteLine("Please enter number in the range 0 <a <2*pi : ");
+                beforeNumber = double.Parse(Console.ReadLine());
             }
-            float afterNumber = beforeNumber * 180;
-            Console.Write($"Number in degrees : {afterNumber}");
+            double afterNumber =(beforeNumber * 180 / pi);
+            Console.Write($"Number in degrees : {Math.Round(afterNumber,3)}");
         }
     }
 }
